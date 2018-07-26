@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>
-      {% block title %}Todolist{% endblock %}
+    {% block title %} - Todolist {% endblock %}
     </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     {% block stylesheets %}{% endblock %}
@@ -13,19 +13,23 @@
   <body>
     <header class="container">
       <h1>TodoApp</h1>
-      <nav>
+      <nav class="mb-3">
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a class="nav-link active" href="#">A propos</a>
+            <a class="nav-link active" href="{{ path('todo_home')}}">A propos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Todos</a>
+            <a class="nav-link" href="{{ path('todo_list')}}">Todos</a>
           </li>
         </ul>
       </nav>
     </header>
     <main class="container">
-      {% block main %}{% endblock %}
+      <div class="row">
+        <div class="col-12">
+          {% block main %}{% endblock %}
+        </div>
+      </div>
     </main>
     {% block javascripts %}{% endblock %}
   </body>
