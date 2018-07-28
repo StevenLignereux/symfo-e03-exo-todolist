@@ -42,10 +42,35 @@ class TodoController extends Controller
         // On récupère l'intitulé de la tâche
         $task = $request->request->get('task');
 
-            TodoModel::add($task);
+        // On controle si la tâche est vide
+        if (empty($task))
+        {
+
+          $this->addFlash('warning', 'Veuillez indiquer une tâche.');
+
+        }
+        else
+        {
+          TodoModel::add($task);
+          $this->addFlash('success', 'Tâche ajoutée.');
+        }
 
         // On redirige vers la page de liste des tâches
         return $this->redirectToRoute('todo_list');
     }
+
+    /**
+     * @Route("todo/reset", name="todo_reset")
+     */
+    public static function resetAction()
+    {
+      TodoModel::reset();
+
+      $this->addFlash('success' , 'Tâches réinitialisées. ');
+      return $this->redirectToRoute('todo_list');
+
+    }
+
+    
 
 }

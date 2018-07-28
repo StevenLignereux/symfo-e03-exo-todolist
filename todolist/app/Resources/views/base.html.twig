@@ -10,7 +10,7 @@
     {% block stylesheets %}{% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
   </head>
-  <body>
+  <body class="mb-5">
     <header class="container">
       <h1>TodoApp</h1>
       <nav class="mb-3">
@@ -27,6 +27,15 @@
     <main class="container">
       <div class="row">
         <div class="col-12">
+
+          {% for label, messages in app.flashes %}
+              {% for message in messages %}
+                  <div class="alert alert-{{ label }}">
+                    {{ message }}
+                  </div>
+              {% endfor %}
+          {% endfor %}
+
           {% block main %}{% endblock %}
         </div>
       </div>

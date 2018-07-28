@@ -97,7 +97,7 @@ class TodoModel
     }
 
     // fonction réinitialisant la liste des tâches initiales
-    public static function resetTodos()
+    public static function reset()
     {
         self::setTodos(self::$initTodos);
     }
