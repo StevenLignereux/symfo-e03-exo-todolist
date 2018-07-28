@@ -15,21 +15,23 @@ class TodoController extends Controller
     /**
      * @Route("/", name="todo_home", methods={"GET"})
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         // replace this example code with whatever you need
         return $this->render('todo/index.html.twig');
     }
-
     /**
-     * @Route ("/todo/list", name="todo_list", methods={"GET"})
+     * @Route("/todo/list", name="todo_list", methods={"GET"})
      */
-    public function listAction()
+    public function listAction(Request $request)
     {
-      $todos = TodoModel::findAll();
-      return $this->render('todo/list.html.twig', [
-        'todos' => $todos,
-      ]);
+        // On récupère la liste des tâches
+        $todos = TodoModel::findAll();
+
+        // On renvoie la liste afin de l'afficher
+        return $this->render('todo/list.html.twig', [
+            'todos' => $todos,
+        ]);
     }
 
     /**
@@ -39,13 +41,9 @@ class TodoController extends Controller
     {
         // On récupère l'intitulé de la tâche
         $task = $request->request->get('task');
-        // Si tâche vide
-        if( empty($task) ) {
 
-        } else {
-            // On l'enregistre dans la liste existante
             TodoModel::add($task);
-        }
+
         // On redirige vers la page de liste des tâches
         return $this->redirectToRoute('todo_list');
     }

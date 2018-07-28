@@ -7,7 +7,6 @@
   <p>Bienvenue sur TodoApp, votre nouveau gestionnaire de tâches ! </p>
   <p>Vous pouvez <a href="{{ path('todo_list')}}">afficher la liste  des tâches</a> ou ajouter tout de suite une nouvelle tâche</p>
 
-  {% include('todo/_todo_add_form.html.twig') %}
-  
-  {% endblock %}
+  {{ include('todo/_todo_add_form.html.twig') }}
 
+  {% endblock %}

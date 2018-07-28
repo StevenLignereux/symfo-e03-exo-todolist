@@ -7,7 +7,7 @@ class TodoModel
     private static $initTodos = [
         [
             'task' => 'Installer Symfony',
-            'status' => 'done',
+            'status' => 'undone',
             'created_at' => '2017-05-12 14:12:05',
         ],
         [
@@ -29,6 +29,12 @@ class TodoModel
 
     private static function getTodos()
     {
+        // On vérifie l'existence de la session
+        if(empty(session_id())) {
+            // On la démarre si non
+            session_start();
+        }
+
         if(!isset($_SESSION["todos"]))
         {
             self::setTodos(self::$initTodos);
@@ -88,5 +94,11 @@ class TodoModel
             unset($todos[$index]);
 
         self::setTodos($todos);
+    }
+
+    // fonction réinitialisant la liste des tâches initiales
+    public static function resetTodos()
+    {
+        self::setTodos(self::$initTodos);
     }
 }
