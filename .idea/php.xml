@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/todolist/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/todolist/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/todolist/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/todolist/vendor/psr/link" />
+      <path value="$PROJECT_DIR$/todolist/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/todolist/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/todolist/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/todolist/vendor/sensio/distribution-bundle" />
+      <path value="$PROJECT_DIR$/todolist/vendor/sensio/generator-bundle" />
+      <path value="$PROJECT_DIR$/todolist/vendor/composer" />
+      <path value="$PROJECT_DIR$/todolist/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/todolist/vendor/doctrine/doctrine-cache-bundle" />
+      <path value="$PROJECT_DIR$/todolist/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/todolist/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/todolist/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/todolist/vendor/symfony/polyfill-apcu" />
+      <path value="$PROJECT_DIR$/todolist/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/todolist/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/todolist/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/todolist/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/todolist/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/todolist/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/todolist/vendor/symfony/swiftmailer-bundle" />
+      <path value="$PROJECT_DIR$/todolist/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/todolist/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/todolist/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/todolist/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/todolist/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/todolist/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/todolist/vendor/symfony/symfony" />
+      <path value="$PROJECT_DIR$/todolist/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/todolist/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/todolist/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/todolist/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/todolist/vendor/sensiolabs/security-checker" />
+      <path value="$PROJECT_DIR$/todolist/vendor/fig/link-util" />
+      <path value="$PROJECT_DIR$/todolist/vendor/incenteev/composer-parameter-handler" />
+      <path value="$PROJECT_DIR$/todolist/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/todolist/vendor/jdorn/sql-formatter" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="5.5.0" />
+</project>

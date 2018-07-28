@@ -10,10 +10,10 @@
 
     {% for todo in todos %}
     <li class="list-group-item">{{todo.task}}</li>
-    {% endfor %} 
-  
+    {% endfor %}
+
   </ul>
-  
+
   {% include('todo/_todo_add_form.html.twig') %}
-  
+
 {% endblock %}
