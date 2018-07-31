@@ -90,10 +90,16 @@ class TodoModel
     {
         $todos = self::getTodos();
 
+        if (!isset($todos[$index])) {
+            return false;
+        }
+
         if(isset($todos[$index]))
             unset($todos[$index]);
 
         self::setTodos($todos);
+
+        return true;
     }
 
     // fonction réinitialisant la liste des tâches initiales

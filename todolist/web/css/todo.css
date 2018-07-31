@@ -4,4 +4,15 @@
 
 .far, .fas {
   color: #007bff;
+  font-size: 1.3em;
+  vertical-align: middle;
+}
+
+.list-group-item form {
+  float: right;
+}
+
+.list-group-item form button.btn {
+  height: 22px;
+  padding: 0 6px;
 }

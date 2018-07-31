@@ -60,18 +60,45 @@ class TodoController extends Controller
     }
 
     /**
-     * @Route("/todo/show/{id}", name="todo_show", methods="GET")
+     * @Route("/todo/show/{id}", name="todo_show", methods={"GET"})
      */
     public function showAction($id)
     {
       $todo = TodoModel::find($id);
+
+     if (!$todo) {
+        throw $this->createNotFoundExeption();
+      } 
+
       return $this->render('todo/show.html.twig', [
         'todo' => $todo,
       ]);
     }
 
+     /**
+     * @Route("/todo/delete/{id}", name="todo_delete", methods={"POST"})
+     */
+      public function deleteAction($id)
+      {
+        // Delete via le model
+        $success = TodoModel::delete($id);
+        if ($success) {
+          $this->addFlash(
+            'success',
+            'Tâche supprimée :muscle:'
+          );
+        } else {
+          $this->addFlash(
+            'danger',
+            'Tâche non trouvée. '
+          );
+        }
+        return $this->redirectToRoute('todo_list');
+        
+      }
+
     /**
-     * @Route("todo/{id}/status/{status}", name="todo_set_status", methods="GET", requirements={"id"="\d+", "status"="done|undone"})
+     * @Route("todo/{id}/status/{status}", name="todo_set_status", methods={"GET"}, requirements={"id"="\d+", "status"="done|undone"})
      */
     public function setStatus($id, $status)
     {

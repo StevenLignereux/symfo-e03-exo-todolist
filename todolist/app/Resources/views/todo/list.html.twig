@@ -6,16 +6,24 @@
 
   <h2>Liste des tâches</h2>
 <ul class="list-group mb-3">
-  {% for todo in todos %}
+  {% for index, todo in todos %}
       <li class="list-group-item">
+        {# tâche effectuée #}
         {% if todo.status == 'done' %}
-        <a href="{{ path('todo_set_status', {'id': loop.index0, 'status': 'undone'}) }}"><i class="far fa-check-square"></i></a>
-        <a href="{{ path('todo_show', {'id': loop.index0}) }}" class="done">{{ todo.task }}</a>
+        <a href="{{ path('todo_set_status', {'id': index, 'status': 'undone'}) }}"><i class="far fa-check-square"></i></a>
+        <a href="{{ path('todo_show', {'id': index}) }}" class="done">{{ todo.task }}</a>
+
+        {# tâche non effectuée #}
         {% else %}
-            <a href="{{ path('todo_set_status', {'id': loop.index0, 'status': 'done'}) }}"><i class="far fa-square"></i></a>
-            <a href="{{ path('todo_show', {'id': loop.index0}) }}">{{ todo.task }}</a>
+            <a href="{{ path('todo_set_status', {'id': index, 'status': 'done'}) }}"><i class="far fa-square"></i></a>
+            <a href="{{ path('todo_show', {'id': index}) }}">{{ todo.task }}</a>
         {% endif %}
-        <i class="fas fa-times"></i>
+
+        {# Bouton delete #}
+        <form action="{{ path('todo_delete' , { 'id': index }) }}" method="post">
+          <button type="submit" name="button" class="btn"><i class="fas fa-times"></i></button>
+        </form>
+        
       </li>
   {% endfor %}
 </ul>
