@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+  <h2>Détail de la tâche</h2>
+  <div><label>Intitulé : </label> {{ todo.task }}</div>
+  <div><label>Statut : </label> <i>{{ todo.status }}</i></div>
+  <div><label>Créée le : </label> <i>{{ todo.created_at|date('d-m-Y à H:i:s') }}</i></div>
+
+  <p><a href="{{ path("todo_list") }}">Retour à la liste</a></p>
+    
+{% endblock %}

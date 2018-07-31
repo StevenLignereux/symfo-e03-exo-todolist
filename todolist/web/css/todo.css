@@ -1,0 +1,7 @@
+.done, .done:hover {
+  text-decoration: line-through;
+}
+
+.far, .fas {
+  color: #007bff;
+}

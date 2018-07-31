@@ -7,7 +7,7 @@ class TodoModel
     private static $initTodos = [
         [
             'task' => 'Installer Symfony',
-            'status' => 'undone',
+            'status' => 'done',
             'created_at' => '2017-05-12 14:12:05',
         ],
         [

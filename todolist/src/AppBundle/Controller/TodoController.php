@@ -60,17 +60,39 @@ class TodoController extends Controller
     }
 
     /**
-     * @Route("todo/reset", name="todo_reset")
+     * @Route("/todo/show/{id}", name="todo_show", methods="GET")
      */
-    public static function resetAction()
+    public function showAction($id)
+    {
+      $todo = TodoModel::find($id);
+      return $this->render('todo/show.html.twig', [
+        'todo' => $todo,
+      ]);
+    }
+
+    /**
+     * @Route("todo/{id}/status/{status}", name="todo_set_status", methods="GET", requirements={"id"="\d+", "status"="done|undone"})
+     */
+    public function setStatus($id, $status)
+    {
+      $success = TodoModel::setStatus($id, $status);
+      if (!$success) {
+        throw $this->createNotFoundExeption();
+      } 
+      return $this->redirectToRoute('todo_list');
+    }
+
+    /**
+     * @Route("todo/reset", name="todo_reset", methods="GET")
+     */
+    public function resetAction()
     {
       TodoModel::reset();
 
       $this->addFlash('success' , 'Tâches réinitialisées. ');
       return $this->redirectToRoute('todo_list');
-
     }
 
-    
+
 
 }
